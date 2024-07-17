@@ -1,0 +1,35 @@
+@use'../_01variable/01.var.scss' as V;
+
+@mixin Rwd($Width){
+    
+    @if $Width == xs{
+       @media screen and (min-width:V.$xs) {
+           @content;//要內容(content)承接，你打的內容才會進來
+        }
+    }
+    @else if $Width == sm{
+        @media screen and (min-width:V.$sm) {
+            @content;
+        }
+    }
+    @else if $Width == md{
+        @media screen and (min-width:V.$md) {
+            @content;
+        }
+    }
+    @else if $Width == lg{
+        @media screen and (min-width:V.$lg) {
+            @content;
+        }
+    }
+    @else if $Width == xl{
+        @media screen and (min-width:V.$xl) {
+            @content;
+        }
+    }
+    @else if $Width == xxl{
+        @media screen and (min-width:V.$xxl) {
+            @content;
+        }
+    }
+}

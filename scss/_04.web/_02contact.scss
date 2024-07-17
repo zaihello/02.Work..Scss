@@ -1,0 +1,284 @@
+@use '../_01variable/01.var.scss' as V;
+@use '../_02.mixin/01media' as Rwd;
+@use '../_02.mixin/02.wh' as Wh;
+
+@include Rwd.Rwd(xs){
+    #XsNav{
+        display: none;
+    }
+    #LgNav{
+        display: none;
+    }
+    header{
+        width: 100%;
+        // height: 42%;
+        >img{
+            width: 100%;
+           height: 100%;
+        }
+    }
+    #contact{
+        // height: 50%;
+        >.contact-container{
+            width: 85%;
+            margin: auto;
+            text-align: center;
+            margin-bottom: 60px;
+            >.contact-flex{
+                display: flex;//開啟位置順序
+                flex-wrap: wrap;
+                >.contact-left{
+                    width: 100%;
+                    order:2;//位置順序
+                    margin-top: 56px;
+                    >h2{
+                        font-size: 2rem;
+                        color:rgb(58, 104, 13);
+                        margin-bottom: 45px;
+                    }
+                    >.contact-information{
+                        margin-bottom: 45px;
+                        >h4{
+                            margin-bottom: 15px;
+                            color: rgba(69, 104, 35, 0.527);
+                        }
+                        >p{
+                            color:rgb(77, 112, 42);
+                        }
+                    }
+                    >.contact-flex-a{
+                        display:flex;
+                        justify-content: center;
+                        >.contact-icon{
+                            width:45px;
+                            height:45px;
+                            border-radius: 50%;
+                            margin-inline: 6px;
+                            background-color:rgb(119, 141, 97);
+                            //置中
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            >a{
+                                text-decoration: none;
+                                color: aliceblue;
+                            }
+                            >a:hover{
+                                width:45px;
+                                height:45px;
+                                border-radius: 50%;
+                                background-color:rgb(58, 104, 13);
+                                 
+                                //置中
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                            }
+                           
+                        }
+                    }
+                }
+                >.contact-right{
+                    width: 100%;
+                    order: 1;// 位置順序
+                    >h2{
+                        text-align: center;
+                        font-size: 2rem;
+                        margin-top: 56px;
+                        margin-bottom: 28px;
+                        color: rgb(58, 104, 13);
+                    }
+                    >.contact-col{
+                        text-align: left;
+                        >form{
+                            text-align: left;
+                                >.form-group{
+                                    >.form-control{
+                                        border: 0;//無框線
+                                        outline: 0;//點擊無內框線
+                                        border-bottom:1px solid #b9b9b9cc;
+                                        color:  #7e7e7e;
+                                        padding-top: 25px;
+                                        padding-bottom:10px;
+                                        width: 100%;
+                                        text-align: left;
+                                    }
+                                    >.form-control:focus{
+                                        border-bottom:1px solid gold;
+                                        color:  #7e7e7e;
+                                    }
+                                    >.form-control::placeholder{
+                                        color:  #7e7e7e;
+                                        font-size: 0.8rem;
+                                        color:  #4d4d4d;
+                                    }
+                                }
+                    
+                                >.btn{
+                                    background-color:gold;
+                                    color: rgb(105, 105, 105);   
+                                    border: 0;
+                                    padding: 13px 27px;
+                                    font-size: 1rem;
+                                    border-radius: 5px;
+                                    margin-top: 15px;
+                                }
+                                >.btn:hover{
+                                    background-color:rgba(179, 152, 1, 0.445);
+                                }
+                            
+                        }
+                    }
+                        
+                }
+
+            }
+        }
+    }
+    #partner{
+        background-color: rgba(236, 236, 236, 0.466);
+        padding-top: 63px;
+        padding-bottom: 68px;
+        >.partner-container{
+            width: 80%;
+            margin: auto;
+            text-align: center;
+            >h2{
+                font-size: 1.7rem;
+                color:rgb(58, 104, 13);
+                line-height: 2.5rem;
+                margin-bottom:58px;   
+            }
+            >.partner-img{
+                margin: auto;
+                >img{
+                    width: 100%;
+                    height: 280px;
+                    margin-bottom: 20px;
+                }    
+            }
+        }
+    }
+    #XsFooter{
+        // height: 50%;
+    }
+}
+
+@include Rwd.Rwd(md){
+    header{
+        height: 32%;
+    }
+    #contact{
+        >.contact-container{
+            margin-top: 20px;
+            padding-bottom: 10px;
+            >.contact-flex{
+                display: flex;//開啟順序
+                >.contact-left{
+                    order: 1;//順序
+                    width: 50%;
+                    text-align: left;
+                    >.contact-flex-a{
+                       justify-content: left;
+                    }
+                }
+                >.contact-right{
+                    order: 2;//順序
+                    width: 50%;
+                    >h2{
+                        text-align: left;
+                    }
+                    
+                }
+                
+            }
+        }
+    }
+    #partner{
+        
+        >.partner-container{
+            width:90%;
+            >h2{
+                width:50%;
+                margin: auto;
+                margin-bottom: 60px;
+                }
+            >.partner-img{
+                display: flex;
+                width: 100%;              
+                margin: auto;
+                // background-color: burlywood;
+                >img{
+                    width: calc((100% - 7.5%)/4);
+                    height: 170px;
+                }
+                >.img-1{
+                    margin-right: 2.5%;
+                }    
+                >.img-2{
+                    margin-right: 2.5%;
+                }
+                >.img-3{
+                    margin-right: 2.5%;
+                }
+            }    
+        }
+    }
+    #MdFooter{
+        // height: 30%;
+        display: block;
+    }
+}
+
+@include Rwd.Rwd(lg){
+    header{
+        height: 55%;
+    }
+    #LgNav{
+        display: block;
+        >.LgNav-container{
+            margin-top: 20px;
+        }
+    }
+    #partner{
+        >.partner-container{
+            >.partner-img{
+                >img{
+                    height: 220px;
+                }
+            }
+        }
+    }
+    #MdFooter{
+        display: none;
+    }
+    
+}
+
+@include Rwd.Rwd(xl){
+   header{
+       height:53%;
+   }
+   #contact{
+        >.contact-container{
+            width: 1050px;
+        }
+   }
+   #partner{
+        >.partner-container{
+            width:1100px;
+            >.partner-img{
+                >img{
+                    height: 260px;
+                }
+            }
+        }
+   }
+   #LgFooter{
+        >.LgFooter-container{
+            width:1200px;
+            margin: auto;
+        }
+   }
+    
+}

@@ -1,0 +1,255 @@
+@use '../_01variable/01.var.scss' as V;
+@use '../_02.mixin/01media' as Rwd;
+@use '../_02.mixin/02.wh' as Wh;
+
+@include Rwd.Rwd(xs){
+    header{
+        margin-bottom:45px;
+    }
+    #services{
+        width: 100%;
+        >.services-container{
+            width: 100%;
+            >.services-flex{
+                padding-top: 15px;
+                padding-bottom: 15px;
+                width: 100%;
+                >.services-col{
+                    >.services-title{
+                        width: 100%;
+                        padding-bottom: 10px;
+                        > h2{
+                            width: 100%;
+                            font-size: 1.7rem;
+                            padding-top: 25px;
+                            margin-bottom: 25px;
+                            color: rgb(58, 104, 13);
+                            padding-left:5%;//對齊p的開頭
+                        }
+                        //共同p
+                        p{
+                            width: 100%;
+                            font-size: 1.15rem;
+                            line-height: 1.8rem;
+                            color: rgba(59, 104, 13, 0.877);
+                        }
+                        >.services-p1{
+                            margin-bottom:30px;
+                        }
+                        >.services-p2{
+                            margin-bottom:25px;
+                        }
+                        >.price{
+                            margin-bottom: 30px;
+                            color: rgb(58, 104, 13);
+                            font-size: 1.3rem;
+                        }
+                        >.services-a{
+                            > a{
+                                display: inline-block;
+                                border: 1px solid #000;
+                                border-radius: 5px;
+                                padding: 13px 30px;
+                                text-decoration: none;
+                                color: rgb(97, 141, 53);
+                                margin-left:5%;//對齊p的開頭
+                            }    
+                            > a:hover{
+                                color:rgb(153, 218, 89);
+                                border:1px solid rgb(153, 218, 89);
+                            }
+                        }
+                       
+                    }
+                }
+                
+               
+            }
+        }
+    } 
+    #why{
+        >.why-container{
+            width: 100%;
+            background-color: rgba(236, 236, 236, 0.466);
+            >.why-flex{
+                >.why-title{
+                    width: 85%;
+                    margin: auto;
+                        >.inward-retraction{
+                            >h2{
+                                font-size: 1.7rem;
+                                color: rgb(58, 104, 13);
+                                padding-top:70px;
+                                padding-bottom: 45px;
+                            }
+                            //共同p
+                            >p{
+                                font-size: 1.15rem;
+                                line-height: 1.8rem;
+                                color: rgba(59, 104, 13, 0.877);
+                            }
+                            >.why-p1{
+                                padding-bottom: 45px;
+                            }
+                            >.why-p2{
+                                padding-bottom: 75px;
+                            }
+                        }     
+                    
+                }
+                >.why-icon-center{
+                    display: none;
+                }
+            }
+          
+        }
+       
+    }
+    #XsFooter{
+        >p{
+            padding-bottom: 50px;
+        }
+    }
+}
+@include Rwd.Rwd(md){
+    #services{
+        width: 100%;
+        >.services-container{
+            width: 95%;
+            margin: auto;
+            // background-color: rgb(226, 141, 12);
+            padding-bottom: 50px;
+            >.services-flex{
+                display: flex;
+                margin-block: 20px;
+                // background-color: rgb(137, 218, 31);
+                >.services-img{
+                    width: 40%;
+                    // background-color: bisque;
+                    // height:min-content;
+                    >img{
+                        // height:min-content;
+                        height:100%;
+                        // object-fit: cover;
+                        // background-color: aqua;
+                    }
+                }
+                >.services-col{
+                    // background-color: bisque;
+                    width: 60%;
+                    >.services-title{
+                        height:min-content;
+                        // background-color: rgb(164, 192, 40);
+                    }
+                }
+                
+    
+            }
+        }
+        
+    }
+}
+@include Rwd.Rwd(lg){
+   #why{
+      >.why-container{
+        >.why-flex{
+            display: flex;
+            // width: 90;
+            >.why-title{
+                width: 60%;
+                // background-color: burlywood;
+                >.inward-retraction{
+                    width: 80%;
+                    margin: auto;
+                    // background-color: coral;
+                }
+            }
+            >.why-icon-center{
+                display: block;
+                width: 40%;
+                // background-color: rgb(86, 199, 64);
+                display: grid;
+                place-content: center;
+                >.why-icon-flex{
+                    width: 100%;
+                    display: flex;
+                    flex-wrap: wrap;
+                    >.why-col{
+                        width: 50%;
+                        // background-color: rgb(196, 186, 54);
+                         display: grid;
+                        place-content: center;
+                        padding-top:30px;
+                        padding-bottom: 20px;
+                        >.why-icon{
+                            width: 80px;
+                            height:80px;
+                            // border: 1px solid #000;
+                            border-radius: 50%;
+                            margin: auto;//i框置中於p
+                            background-color: white;
+                            //i置中
+                            display: grid;
+                            place-content: center;
+
+                            margin-bottom: 20px;
+                            >i{
+                                font-size: 2.5rem;
+                                color: rgb(58, 104, 13); 
+                            }    
+                        }
+                        >.why-p{
+                            width: 100%;
+                            // background-color: cyan;
+                            >p{
+                                color: rgba(59, 104, 13, 0.877);
+                            }
+                        }               
+                      
+                    }
+                    
+                }                   
+            }
+        }
+      }  
+   }
+
+}
+@include Rwd.Rwd(xl){
+    #services{
+        >.services-container{
+            width:1000px;
+            margin: auto;
+            >.services-flex{
+                >.services-img{
+                    height: 500px;
+                    >img{
+
+                    }
+                }
+                >.services-col{
+                   display: flex;
+                   align-items: center;
+
+                    >.services-title{
+                        width: 82%;
+                        margin: auto;
+
+                    }
+                }
+            }
+        }
+    }
+    #why{
+        background-color: rgba(223, 223, 223, 0.466);
+        >.why-container{
+            width: 1100px;
+            margin: auto;
+           
+            >.why-flex{
+                // >.why-title{ background-color: rgba(236, 236, 236, 0.466);}
+                // >.why-icon-center{ background-color: rgba(236, 236, 236, 0.466);}
+            }
+        }
+    }
+}

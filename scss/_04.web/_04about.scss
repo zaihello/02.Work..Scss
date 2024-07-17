@@ -1,0 +1,99 @@
+@use '../_01variable/01.var.scss' as V;
+@use '../_02.mixin/01media' as Rwd;
+@use '../_02.mixin/02.wh' as Wh;
+
+@include Rwd.Rwd(xs){
+    #about{
+        // background-color: black;
+        >.about-container{
+            text-align:center ;
+            >p{
+                font-size: 1.3rem;
+                line-height: 2.5rem;
+                color: rgba(59, 104, 13, 0.877);
+               
+               margin-bottom: 50px;
+            } 
+            >img{
+                height: 200px;
+            }
+            >.flex{
+                // padding-block:40px;
+                padding-top: 40px;
+                padding-bottom: 50px;
+                // background-color: aquamarine;
+                >.about-col{
+                   margin-bottom: 35px;
+                //    background-color: blanchedalmond;
+                   padding-inline: 10px;//文字內縮
+                    >h3{
+                        font-size: 1.5rem;
+                        color: rgb(58, 104, 13);
+                        margin-bottom: 15px;
+                    }
+                    >p{
+                        color: rgba(59, 104, 13, 0.877);
+                        line-height: 1.5rem;
+                    }
+                }
+            }
+        }
+    }
+   
+}
+@include Rwd.Rwd(md){
+    #about{
+        // background-color: black;
+        >.about-container{
+            width: 85%;
+            margin: auto;
+            >p{
+                width: 90%;
+                margin: auto;
+                // background-color: blanchedalmond;
+                font-size: 2rem;
+                margin-top:70px;
+                margin-bottom: 60px;
+            }
+            >img{
+                height: 320px;
+            }
+            >.flex{
+                display: flex;
+               
+                >.about-col{
+                    margin: auto;//置中
+                }
+            }
+        }
+    }        
+}
+@include Rwd.Rwd(xl){
+    #about{
+    //    background-color: black;
+        >.about-container{
+            width: 1050px;
+            margin: auto;
+            // background-color: rgb(179, 102, 168);
+            padding-top:50px;
+            >p{
+                width: 70%;
+                margin: auto;
+                font-size: 2.3rem;
+                line-height: 2.8rem;
+                // margin-block: 50px;
+                margin-bottom: 80px;
+            }
+            >img{
+                height: 550px;
+            }
+            >.flex{
+                >.about-col{
+                    padding-inline: 40px;//文字內縮
+                    >h3{}
+                    >p{}
+                }
+            }
+        }
+    }
+}

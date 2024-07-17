@@ -1,0 +1,530 @@
+@use '../_01variable/01.var.scss' as V;
+@use '../_02.mixin/01media' as Rwd;
+@use '../_02.mixin/02.wh' as Wh;
+
+@include Rwd.Rwd(xs){
+    %WHIn{
+        @include Wh.WH(10%,10%);
+    }
+
+    #LgNav{
+        display: none;
+    }
+    #XsBread{
+        margin-top: 20px;
+        // position: fixed;
+        // z-index: V.$XsBread-index;
+        width: 100%;
+        height: 60px;
+        padding-inline: 4%;
+        // background-color: transparent;
+        >.XsBread-container{
+            display: flex;
+            height: 45px;
+            justify-content: space-between;          
+            >a{
+                text-decoration: none;
+                color: aliceblue;
+                font-size: 1.3rem;
+                
+                //置中
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                >i{
+                    color:gold;
+                    font-size: 2rem;
+                }
+                
+            }
+            >.XsBreadIcon{
+                width: 45px;
+                height: 45px;
+                >.XsBreadIcon-a{
+                    width: 45px;
+                    height: 45px;
+                    border-radius: 50%;
+                    display: grid;
+                    place-content: center;
+                    text-decoration: none;
+                    color: white;
+                    background-color: gold;
+                    font-size: 1.3rem;
+                } 
+            }
+        }
+        
+    }
+   
+    #xs-list{
+        display: none;
+        position: absolute;//只有絕對會浮起來並連著nav跑
+        z-index: 100;
+        top:65px;
+        background-color: white;
+        width: 100%;
+        >.xs-list-row{
+            width: 100%;
+            >a{
+                display: inline-block;
+                text-decoration: none;
+                color: rgb(75, 75, 75);
+                display: inline-block;
+                padding-block: 15px;
+                padding-left:20px;
+                border-bottom: 1px solid rgba(136, 136, 136, 0.507);
+                width: 100%;
+                
+            }
+            >a:hover{
+                color: gold;
+            }
+        }
+        
+       
+    }
+    header{        
+        position: relative;
+        //置中
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        // height:800px;
+        height: 52%;
+            >img{
+                width: 100%; 
+                height: 100%;   
+            }
+            >.HeaderTitle{
+                position: absolute;
+                text-align: center;
+                padding:20px;
+                >h2,h1,p{
+                    color: aliceblue;
+                }
+                >.Header-p{
+                    font-size: 2.5rem;
+                }
+                >h1{
+                    font-size: 4rem;
+                    margin-bottom: 5px;
+                }
+                >p{
+                    width: 70%;
+                    margin-bottom: 8px;
+                    line-height: 1.4rem;
+                    //置中
+                    margin-inline: auto;
+                    align-items: center;
+                }
+                >.a-link{
+                    width: 30%;
+                    background-color: gold;
+                    margin-top: 20px;
+                    border-radius: 10px;
+                    //置中
+                    margin-inline: auto;
+                    >a{
+                        display: block;//a轉區塊做padding
+                        border-radius: 10px;
+                        padding: 13px 14px;
+                        text-decoration:none;
+                        color: rgb(121, 121, 121);   
+                    }
+                    >a:hover{
+                        background-color: rgba(169, 169, 169,0.5);
+                    }
+
+                }
+              
+            }
+       
+    }
+    #services{
+        width: 100%;
+        >.services-container{
+            >h2{
+                text-align: center;
+                margin-top: 60px;
+                margin-bottom: 20px;
+                font-size: 2rem;
+                color: rgb(73, 129, 18);
+            }
+            >.services-line{
+                width: 22%;
+                height:0.7px;                
+                border: solid gold;
+                margin: auto;
+                margin-bottom:40px;
+            }
+                //有2個以上不能加>必須拿出來外面外才能輸入
+                img,h3,p{
+                    padding-inline: 5%;//內縮
+                }
+                img{
+                    height: 430px;   
+                }
+                h3{
+                    margin-top: 30px;
+                    margin-bottom: 15px;
+                    color: rgb(73, 129, 18);
+                }
+                p{
+                    width: 70%;
+                    line-height: 1.5rem;
+                    color: rgb(105, 153, 57);
+                    margin-bottom: 70px;
+                }
+        }                
+    }
+    #customer-testimonials{
+        width: 100%;
+        padding-top: 100px;
+        padding-bottom: 50px;
+        background-color: rgba(236, 236, 236, 0.466);
+        text-align: center;
+        >.customer-container{
+            >p{
+                width: 88%;
+                margin-inline: auto;
+                font-size: 1.3rem;
+                line-height: 2.5rem;
+                color:  rgb(105, 153, 57);
+            }
+            >.customer-img{
+                >img{
+                    width: 50px;
+                    height: 50px;
+                    border-radius: 50%;//圖片變圓形
+                    margin-inline: auto;
+                    margin-top: 26px;
+                    margin-bottom: 13px;
+                }
+            }                        
+        }   
+    }
+    #about{
+        padding-inline: 5%;
+        margin-bottom: 75px;
+        >.aboutcontainer{
+            >.about-flex{
+                >.about-title{
+                    >h4{
+                        margin-top: 65px;
+                        margin-bottom: 18px;
+                        color: rgb(97, 141, 53);
+                    }
+                    > h2{
+                        font-size: 1.7rem;
+                        line-height: 2.5rem;
+                        margin-bottom: 36px;
+                        // text-align: justify;  //左右對齊
+                        color: rgb(58, 104, 13);
+                    }
+                    > p{
+                        font-size: 1.15rem;
+                        line-height: 1.8rem;
+                        text-align: justify;//左右對齊
+                        margin-bottom: 45px;
+                        color:  rgb(105, 153, 57);
+                    }
+                    > a{
+                        border: 1px solid #000;
+                        border-radius: 5px;
+                        padding: 13px 30px;
+                        text-decoration: none;
+                        color: rgb(97, 141, 53);
+                    }
+                    > a:hover{
+                        color:rgb(153, 218, 89);
+                        border:1px solid rgb(153, 218, 89);
+                    }
+                }
+                >.about-img{
+                    > img{
+                        display: none;
+                    }
+                }
+            }
+        }
+    } 
+    #questions{
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 410px;        
+        >img{
+            width: 100%;
+            height: 100%;
+        }
+        >.questions-title{
+            position: absolute;
+            text-align: center;
+            >h2{
+                margin-bottom: 27px;
+                color: rgb(58, 104, 13);
+                font-size: 2.5rem;
+            }   
+            >p{
+                width: 85%;
+                line-height: 2rem;
+                font-size: 1.1rem;
+                margin-inline: auto;
+                margin-bottom: 30px;
+                color: rgb(77, 112, 42);
+            }    
+            >.questions-link{
+                width: 155.5px;//按鈕寬度
+                background-color: gold;
+                border-radius: 5px;
+                padding-block: 12px; //調整按鈕高度           
+                //置中
+                margin-inline: auto;
+                >a{
+                    padding: 13px 30px;  //調整a面積按鈕高度 
+                    color: rgb(121, 121, 121); 
+                    text-decoration: none;  
+                }
+                >a:hover{
+                    width: 100%;
+                    background-color: rgba(169, 169, 169,0.5);
+                    border-radius: 5px;
+                }
+            }   
+        }
+    } 
+    #XsFooter{
+        // height: 40%; //高度比例
+        text-align: center;
+        margin-top:35px;
+        //共用a
+        a{
+            text-decoration: none; 
+            color: rgb(77, 112, 42);
+        }
+        >.XsFooter-a{
+             padding-bottom: 22px;     
+        }
+        >.XsFooter-Logo{
+            padding-block: 40px;
+            i{
+                font-size: 2rem;
+            }
+
+         }
+         p{
+             color: rgb(77, 112, 42);
+         }  
+    }
+    #MdFooter{
+        display: none;
+    }    
+    #LgFooter{
+        display: none;
+    }
+  
+}
+
+@include Rwd.Rwd(md){
+    #header{
+        // height:80%;
+        // height: 1000px;
+    //    padding-top: 100px;
+    }
+    #services{
+        >.services-container{
+            >.services-col{
+                display: flex;
+            }
+        }    
+    }
+    #customer-testimonials{
+        >.customer-container{
+            >p{
+                width: 70%;
+                font-size: 1.7rem;
+            }
+        }    
+    }
+    #about{
+        margin-top: 20px;
+        margin-bottom: 90px;
+        padding-inline:initial;//左右切齊
+        >.aboutcontainer{
+            >.about-flex{
+                display: flex;       
+                >.about-title{
+                    width :calc(100% / 2 );
+                    height: 100%;
+                    margin-left: 4%;
+                    margin-right: 5%;
+                    >h2{
+                        text-align:left;
+                    }
+                }
+                >.about-img{
+                    width: calc(100% / 2 );
+                    margin-right: 4%;
+                    >img{
+                        margin-top: 60px;
+                        width: 100%;
+                        height: 90%;   
+                        display:block;
+                    }           
+                }       
+            } 
+        }            
+    }
+    #questions{
+        >.questions-title{
+            >p{
+                width: 55%;
+            }
+        }    
+    }
+    #XsFooter{
+        display: none;
+    }
+    #MdFooter{
+        display: block;
+        text-align:center;
+        // height: 20%;
+            >.MdFooter-a{
+                margin-top: 50px;
+                >a{
+                    text-decoration: none;
+                    padding-inline: 15px; 
+                    color: rgb(77, 112, 42);
+                }
+            }
+            >.MdFooter-logo{
+                margin-block: 40px;
+                
+                >a{
+                    text-decoration: none;
+                    color: rgb(77, 112, 42);
+                    >i{
+                        font-size: 2rem;
+                    }
+                }   
+            }
+            p{
+                padding-bottom:  40px;
+                color: rgb(77, 112, 42);
+            }    
+    }
+
+}
+
+@include Rwd.Rwd(lg){
+    #LgNav{
+        display: block;
+        width: 100%;
+        position:fixed;
+        z-index: V.$LgNav-index;    
+        backdrop-filter: blur(8px);
+        
+        // background-color: aqua;
+      
+
+        //all a
+        a{
+            color:aliceblue;
+            text-decoration: none;
+            display: inline-block;
+            margin-inline: 8px;
+            padding: 10px 15px;
+        }
+        >.LgNav-container{
+            margin-inline: auto;
+            justify-content: space-between;
+            margin: 10px 1%;
+            //垂直置中
+            display: flex;
+            align-items: center;
+            // background-color: blueviolet;
+            >a{
+                >i{
+                    font-size: 2rem;
+
+                }
+            }
+            >.LgNav-right{
+                >.LgNav-phone{
+                    border: 2px solid white;
+                    border-radius: 5px;
+                }
+            }
+        }
+    }
+    #XsBread{
+        display: none;
+    }
+    #MdFooter{
+        display: none;
+    }
+    #LgFooter{
+        display: block;
+        //all a
+        a{
+            text-decoration: none;
+            color:rgb(77, 112, 42);
+        }
+        .LgFooter-flex{
+            display: flex;
+            justify-content: space-between;
+            margin-inline: 4%;
+            padding-block: 45px;
+            >.LgFooter-left{
+                >.LgFooter-a{
+                     padding-right: 15px;
+                }
+                a{
+                    display: inline-block;
+                }
+            }
+            >.LgFooter-logo{
+               margin-right:60px; 
+               color:rgb(77, 112, 42);
+               a{
+                font-size: 2rem;
+                }     
+            }
+            P{
+                color:rgb(77, 112, 42);
+            }
+        }
+    }    
+}
+
+@include Rwd.Rwd(xl){
+    #LgNav{
+        .LgNav-container{
+            width: 1200px;
+            margin: auto;
+        }
+    }
+    #services{
+        >.services-container{
+            width: 1200px;
+            margin: auto;
+        }    
+    }
+    #customer-testimonials{
+        >.customer-container{
+            width:58%;
+            margin: auto;
+            >p{
+                font-size: 2.2rem;
+                line-height: 2.5rem;
+            }
+        }    
+    }
+    #about{
+        >.aboutcontainer{
+            width: 1200px;
+            margin: auto;
+        }
+    }
+}
